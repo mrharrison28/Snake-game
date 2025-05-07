@@ -1,4 +1,4 @@
-const canvas = document.getElementById("Canvas");
+const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 const box = 20; // size of one square
@@ -22,6 +22,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 function draw() {
+  ctx.clearRect(0, 0, canvasSize, canvasSize);
 
   // Draw snake
   for (let i = 0; i < snake.length; i++) {
@@ -73,4 +74,4 @@ function draw() {
   ctx.fillText("Score: " + score, 10, 20);
 }
 
-const game = setInterval(draw, 150);
+const game = setInterval(draw, 250);
